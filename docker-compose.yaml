@@ -21,10 +21,11 @@ services:
     volumes:
       - ./livekit.yaml:/etc/livekit.yaml
     labels:
-      - traefik.enable=true
-      - "traefik.http.routers.livekit.rule=Host(`livekit.uptopoint.com`)"
-      - traefik.http.routers.livekit.entrypoints=https
-      - caddy_0.tls=internal
+  - traefik.enable=true
+  - "traefik.http.routers.livekit.rule=Host(`livekit.uptopoint.com`)"
+  - "traefik.http.routers.livekit.entrypoints=https"
+  - "traefik.http.routers.livekit.tls=true"
+  - "caddy_0.tls=internal"
 
   redis:
     image: redis:7-alpine
