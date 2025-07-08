@@ -3,9 +3,9 @@ services:
     image: livekit/caddyl4
     command: run --config /etc/caddy.yaml --adapter yaml
     restart: unless-stopped
-    ports:
-      - "80:80/tcp"
-      - "443:443/tcp"
+    #ports:
+    #  - "80:80/tcp"
+    #  - "443:443/tcp"
     volumes:
       - ./caddy.yaml:/etc/caddy.yaml
       - ./caddy_data:/data
